@@ -126,5 +126,5 @@
 
 ---
 
-*Track progress daily and adjust weekly based on challenges encountered. Good luck!*
+> *Track progress daily and adjust weekly based on challenges encountered. Good luck!*
 
