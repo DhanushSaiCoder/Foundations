@@ -83,5 +83,5 @@ Use this checklist to track your mastery of Data Structures & Algorithms (DSA). 
 
 ---
 
-> _Once every box is checked_, you can confidently say you’ve **completed** your DSA roadmap and are ready for coding interviews at ₹24 LPA+ companies!
+> _Once every box is checked_, I can confidently say I’ve **completed** my DSA roadmap and am ready for coding interviews at ₹24 LPA+ companies!
 
