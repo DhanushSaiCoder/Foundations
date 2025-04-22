@@ -10,6 +10,9 @@ public class Main extends LinkedList {
         list.addLast(40);
         System.err.println(list.printList());
         System.err.println(list.printValues());
+        System.err.println("Adding 99 to first");
+        list.addFirst(99);
+        System.err.println(list.printValues());
 
     }
 }
@@ -70,5 +73,18 @@ class LinkedList {
         }
 
         return resList;
+    }
+
+    public void addFirst(int value) {
+        var nn = new Node(value);
+
+        //if empty, Assign a new node as first
+        if (first == null) {
+            first = nn;
+        } //if not empty, create new node, new node.next = first.
+        else {
+            nn.next = first;
+            first = nn;
+        }
     }
 }
