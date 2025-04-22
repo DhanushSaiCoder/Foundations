@@ -9,8 +9,8 @@ public class Main extends LinkedList {
         list.addLast(30);
         list.addLast(40);
         System.err.println(list.printValues());
-        System.err.println("Deleting first item: ");
-        list.deleteFirst();
+        System.err.println("Deleting last item: ");
+        list.deleteLast();
         System.err.println(list.printValues());
 
     }
@@ -95,6 +95,19 @@ class LinkedList {
         //first = first.next;
         first = first.next;
 
+    }
+
+    public void deleteLast() {
+        //if empty, return;
+        if(first == null) return;
+      
+        //iterate upto curr.next == last as temp, temp.next = null;
+        Node curr = first;
+        while(curr.next != last){
+            curr = curr.next;
+        }
+        curr.next = null;
+        last = curr;
     }
 
 }
