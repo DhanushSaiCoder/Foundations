@@ -9,7 +9,10 @@ public class Main extends LinkedList {
         list.addLast(30);
         list.addLast(40);
         System.out.println(list.printValues());
-        System.out.println(list.indexOf(20));
+        list.reverse();
+        System.out.println("After reversing: ");
+        System.out.println(list.printValues());
+
     }
 }
 
@@ -143,4 +146,22 @@ class LinkedList {
         return -1;
     }
 
+    public void reverse() {
+        // [f10 -> 20 -> 30 -> l40]
+        // [f40 -> 30 -> 20 -> l10]
+
+        if (first == null || first == last) {
+            return;
+        }
+        //create a new ll as nll
+        // iterate through the ll, addFirst to nll
+        var nll = new LinkedList();
+        Node curr = first;
+        while (curr != null) {
+            nll.addFirst(curr.value);
+            curr = curr.next;
+        }
+        first = nll.first;
+        last = nll.last;
+    }
 }
