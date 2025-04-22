@@ -30,4 +30,10 @@ class LinkedList {
             last = node;
         }
     }
+    public String isEmpty(){
+        if(first == null){
+            return "empty";
+        }
+        else return "not empty";
+    }
 }
