@@ -8,11 +8,8 @@ public class Main extends LinkedList {
         list.addLast(20);
         list.addLast(30);
         list.addLast(40);
-        System.err.println(list.printValues());
-        System.err.println("Deleting last item: ");
-        list.deleteLast();
-        System.err.println(list.printValues());
-
+        System.out.println(list.printValues());
+        System.out.println(list.containsNode(20));
     }
 }
 
@@ -99,15 +96,34 @@ class LinkedList {
 
     public void deleteLast() {
         //if empty, return;
-        if(first == null) return;
-      
+        if (first == null) {
+            return;
+        }
+
         //iterate upto curr.next == last as temp, temp.next = null;
         Node curr = first;
-        while(curr.next != last){
+        while (curr.next != last) {
             curr = curr.next;
         }
         curr.next = null;
         last = curr;
+    }
+
+    public String containsNode(int item) {
+        //iterate through the ll, if curr.value == item, return true;
+        if (first == null) {
+            return "false";
+        }
+
+        Node curr = first;
+        while (curr != null) {
+            if (curr.value == item) {
+                return "true";
+            }
+            curr = curr.next;
+        }
+
+        return "false";
     }
 
 }
