@@ -8,10 +8,9 @@ public class Main extends LinkedList {
         list.addLast(20);
         list.addLast(30);
         list.addLast(40);
-        System.err.println(list.printList());
         System.err.println(list.printValues());
-        System.err.println("Adding 99 to first");
-        list.addFirst(99);
+        System.err.println("Deleting first item: ");
+        list.deleteFirst();
         System.err.println(list.printValues());
 
     }
@@ -32,6 +31,19 @@ class LinkedList {
     private Node last;
 
     //METHODS:
+    public void addFirst(int value) {
+        var nn = new Node(value);
+
+        //if empty, Assign a new node as first
+        if (first == null) {
+            first = nn;
+        } //if not empty, create new node, new node.next = first.
+        else {
+            nn.next = first;
+            first = nn;
+        }
+    }
+
     public void addLast(int value) {
         var node = new Node(value);
         if (first == null) {
@@ -75,16 +87,14 @@ class LinkedList {
         return resList;
     }
 
-    public void addFirst(int value) {
-        var nn = new Node(value);
-
-        //if empty, Assign a new node as first
+    public void deleteFirst() {
+        //if empty, return;
         if (first == null) {
-            first = nn;
-        } //if not empty, create new node, new node.next = first.
-        else {
-            nn.next = first;
-            first = nn;
+            return;
         }
+        //first = first.next;
+        first = first.next;
+
     }
+
 }
