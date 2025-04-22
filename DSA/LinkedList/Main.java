@@ -1,6 +1,4 @@
 
-
-
 public class Main extends LinkedList {
 
     public static void main(String[] args) {
@@ -61,6 +59,7 @@ class LinkedList {
         return resList;
 
     }
+
     public java.util.List<Integer> printValues() {
         java.util.List<Integer> resList = new java.util.ArrayList<>();
 
