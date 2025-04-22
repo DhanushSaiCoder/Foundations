@@ -1,4 +1,3 @@
-
 public class Main extends LinkedList {
 
     public static void main(String[] args) {
@@ -147,21 +146,27 @@ class LinkedList {
     }
 
     public void reverse() {
-        // [f10 -> 20 -> 30 -> l40]
-        // [f40 -> 30 -> 20 -> l10]
-
+        //    [10 20 30 40]
+        //   p  c  n
+        // If the list is empty or has only one node, no need to reverse
         if (first == null || first == last) {
             return;
         }
-        //create a new ll as nll
-        // iterate through the ll, addFirst to nll
-        var nll = new LinkedList();
-        Node curr = first;
-        while (curr != null) {
-            nll.addFirst(curr.value);
-            curr = curr.next;
+
+        Node previous = null;
+        Node current = first;
+        Node next;
+
+        // Traverse the list and reverse the links
+        while (current != null) {
+            next = current.next; // Save the next node
+            current.next = previous; // Reverse the link
+            previous = current; // Move previous to current
+            current = next; // Move current to next
         }
-        first = nll.first;
-        last = nll.last;
+
+        // Swap first and last nodes
+        last = first;
+        first = previous;
     }
 }
