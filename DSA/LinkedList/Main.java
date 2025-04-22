@@ -1,4 +1,6 @@
 
+
+
 public class Main extends LinkedList {
 
     public static void main(String[] args) {
@@ -8,7 +10,8 @@ public class Main extends LinkedList {
         list.addLast(20);
         list.addLast(30);
         list.addLast(40);
-        System.err.println(list.isEmpty());
+        System.err.println(list.printList());
+        System.err.println(list.printValues());
 
     }
 }
@@ -57,5 +60,16 @@ class LinkedList {
 
         return resList;
 
+    }
+    public java.util.List<Integer> printValues() {
+        java.util.List<Integer> resList = new java.util.ArrayList<>();
+
+        Node current = first;
+        while (current != null) {
+            resList.add(current.value);
+            current = current.next;
+        }
+
+        return resList;
     }
 }
