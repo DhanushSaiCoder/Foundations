@@ -6,16 +6,15 @@ public class Main extends LinkedList {
     }
 }
 
-class LinkedList extends Node {
+class LinkedList {
+
+    private class Node {
+        private int value;
+        private Node next;
+    }
 
     private int first;
     private int last;
 
     //METHODS:
-}
-
-class Node {
-
-    private int data;
-    private Node next;
 }
