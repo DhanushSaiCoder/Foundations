@@ -37,10 +37,25 @@ class LinkedList {
             last = node;
         }
     }
-    public String isEmpty(){
-        if(first == null){
+
+    public String isEmpty() {
+        if (first == null) {
             return "empty";
+        } else {
+            return "not empty";
         }
-        else return "not empty";
+    }
+
+    public LinkedList printList() {
+        var resList = new LinkedList();
+
+        Node current = first;
+        while (current != null) {
+            resList.addLast(current.value);
+            current = current.next;
+        }
+
+        return resList;
+
     }
 }
