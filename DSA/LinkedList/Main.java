@@ -9,12 +9,25 @@ public class Main extends LinkedList {
 class LinkedList {
 
     private class Node {
+
+        Node(int val) {
+            this.value = val;
+        }
         private int value;
         private Node next;
     }
 
-    private int first;
-    private int last;
+    private Node first;
+    private Node last;
 
     //METHODS:
+    public void addLast(int value) {
+        var node = new Node(value);
+        if (first == null) {
+            first = last = node;
+        } else {
+            last.next = node;
+            last = node;
+        }
+    }
 }
