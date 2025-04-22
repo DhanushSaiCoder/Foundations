@@ -9,7 +9,7 @@ public class Main extends LinkedList {
         list.addLast(30);
         list.addLast(40);
         System.out.println(list.printValues());
-        System.out.println(list.containsNode(20));
+        System.out.println(list.indexOf(20));
     }
 }
 
@@ -124,6 +124,23 @@ class LinkedList {
         }
 
         return "false";
+    }
+
+    public int indexOf(int item) {
+        //if empty return -1;
+        if (first == null) {
+            return -1;
+        }
+        Node curr = first;
+        int index = 0;
+        while (curr != null) {
+            if (curr.value == item) {
+                return index;
+            }
+            curr = curr.next;
+            index++;
+        }
+        return -1;
     }
 
 }
