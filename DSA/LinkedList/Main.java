@@ -20,7 +20,7 @@ class LinkedList {
         Node(int val) {
             this.value = val;
         }
-        private int value;
+        private final int value;
         private Node next;
     }
 
