@@ -1,3 +1,4 @@
+
 public class Main extends LinkedList {
 
     public static void main(String[] args) {
@@ -5,12 +6,8 @@ public class Main extends LinkedList {
         var list = new LinkedList();
         list.addLast(10);
         list.addLast(20);
-        list.addLast(30);
-        list.addLast(40);
         System.out.println(list.printValues());
-        list.reverse();
-        System.out.println("After reversing: ");
-        System.out.println(list.printValues());
+        System.err.println(list.Kth(2));
 
     }
 }
@@ -168,5 +165,20 @@ class LinkedList {
         // Swap first and last nodes
         last = first;
         first = previous;
+    }
+
+    public int Kth(int k) {
+        Node a = first, b = first;
+        int bdistance = 0;
+        while (b.next != null) {
+            if (bdistance != k - 1) {
+                b = b.next;
+                bdistance++;
+                continue;
+            }
+            a = a.next;
+            b = b.next;
+        }
+        return a.value;
     }
 }
