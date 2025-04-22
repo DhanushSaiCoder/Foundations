@@ -5,6 +5,6 @@ public class list {
         LinkedList list = new LinkedList();
         list.addFirst(01);
         list.addLast(02);
-        
+        System.out.println(list);
     }
 }
