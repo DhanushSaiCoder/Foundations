@@ -3,6 +3,13 @@ public class Main extends LinkedList {
 
     public static void main(String[] args) {
         System.out.println("Hello World");
+        var list = new LinkedList();
+        list.addLast(10);
+        list.addLast(20);
+        list.addLast(30);
+        list.addLast(40);
+        System.err.println(list.isEmpty());
+
     }
 }
 
