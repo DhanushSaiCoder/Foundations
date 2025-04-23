@@ -9,8 +9,8 @@ public class RemoveNthFromEnd extends LinkedList {
         list.addLast(40);
         list.addLast(50);
         System.out.println(list.printValues());
-        list.linkNodes(1, 3);
-        System.out.println(list.findCycleBeg());
+        list.linkNodes(2, 3);
+        System.out.println("link beginning: " + list.findCycleBeg());
     }
 
 }
@@ -258,7 +258,7 @@ class LinkedList {
             index++;
             b = (b.next).next;
         }
-        return index;
+        return a.value;
     }
 
 }
