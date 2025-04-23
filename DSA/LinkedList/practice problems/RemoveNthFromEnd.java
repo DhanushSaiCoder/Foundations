@@ -9,9 +9,8 @@ public class RemoveNthFromEnd extends LinkedList {
         list.addLast(40);
         list.addLast(50);
         System.out.println(list.printValues());
-        list.RemoveNthFromEnd(3);
-        System.out.println(list.printValues());
-
+        list.linkNodes(1, 3);
+        System.out.println(list.findCycleBeg());
     }
 
 }
@@ -31,6 +30,24 @@ class LinkedList {
     private Node last;
 
     //METHODS:
+    public void linkNodes(int x, int y) {
+        Node a, b;
+        a = b = first;
+        int aindex = 0, bindex = 0;
+        while (aindex != x || bindex != y) {
+            if (bindex != y) {
+                b = b.next;
+                bindex++;
+            }
+            if (aindex != x) {
+                a = a.next;
+                aindex++;
+            }
+        }
+        System.out.println("Linking: " + b.value + " to " + a.value);
+        b.next = a;
+    }
+
     public void addFirst(int value) {
         var nn = new Node(value);
 
@@ -212,4 +229,36 @@ class LinkedList {
 
         x.next = a.next;
     }
+
+    public int findCycleBeg() {
+        // [10 20 30 40 50]
+        //      |     |
+        //       <-----
+
+        // FLOYD'S ALGORITHM:
+        // two pointers: a, b( a one step at at time, b 2 steps)
+        //increment the pointers until they meet at some point, if they meet:
+        // >> move a to head, and increment again,
+        // >> they meet at the beg of the cycle.
+        // >> move a to head and count the index of the meeting node, return the index.
+        //if the first pointer reachs the tail, return -1 
+        Node a = first;
+        Node b = first;
+        do {
+            if (a.next == null || b.next == null) {
+                return -1;
+            }
+            a = a.next;
+            b = (b.next).next;
+        } while (a != b);
+        a = first;
+        var index = 0;
+        while (a != b) {
+            a = a.next;
+            index++;
+            b = (b.next).next;
+        }
+        return index;
+    }
+
 }
