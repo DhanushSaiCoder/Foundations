@@ -6,7 +6,7 @@ public class MergeKSortedLists extends LinkedList {
         var aList = new LinkedList();
         var bList = new LinkedList();
         var cList = new LinkedList();
-        
+
         aList.addLast(1);
         aList.addLast(3);
         aList.addLast(5);
@@ -25,8 +25,6 @@ public class MergeKSortedLists extends LinkedList {
         // list.addList(aList);
         // list.addList(bList);
         // list.addList(cList);
-
-        
     }
 
 }
