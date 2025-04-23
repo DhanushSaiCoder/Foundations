@@ -22,9 +22,11 @@ public class MergeKSortedLists extends LinkedList {
         cList.addLast(4);
         cList.addLast(7);
 
-        // list.addList(aList);
-        // list.addList(bList);
-        // list.addList(cList);
+        list.addList(aList);
+        list.addList(bList);
+        list.addList(cList);
+
+        System.out.println(list.printValues());
     }
 
 }
@@ -44,6 +46,19 @@ class LinkedList {
     private Node last;
 
     //METHODS:
+    public void addList(LinkedList newList) {
+        if (first == null) {
+            first = newList.first;
+        }
+        if (first == last) {
+            first = last = newList.first;
+            return;
+        } else {
+            last.next = newList.first;
+            last = newList.last;
+        }
+    }
+
     public void linkNodes(int x, int y) {
         Node a, b;
         a = b = first;
