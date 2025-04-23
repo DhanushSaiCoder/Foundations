@@ -10,23 +10,26 @@ public class MergeKSortedLists extends LinkedList {
         aList.addLast(1);
         aList.addLast(3);
         aList.addLast(5);
+        System.out.println("aList: " + aList.printValues());
 
         bList.addLast(1);
         bList.addLast(2);
         bList.addLast(3);
         bList.addLast(7);
+        System.out.println("bList: " + bList.printValues());
 
         cList.addLast(2);
         cList.addLast(3);
         cList.addLast(4);
         cList.addLast(4);
         cList.addLast(7);
+        System.out.println("cList: " + cList.printValues());
 
         list.addList(aList);
         list.addList(bList);
         list.addList(cList);
 
-        System.out.println(list.printValues());
+        
     }
 
 }
@@ -48,11 +51,7 @@ class LinkedList {
     //METHODS:
     public void addList(LinkedList newList) {
         if (first == null) {
-            first = newList.first;
-        }
-        if (first == last) {
             first = last = newList.first;
-            return;
         } else {
             last.next = newList.first;
             last = newList.last;
