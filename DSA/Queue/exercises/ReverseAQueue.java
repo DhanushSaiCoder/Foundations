@@ -20,7 +20,7 @@ public class ReverseAQueue {
 
     public static Queue<Integer> reverse(Queue<Integer> queue) {
         // [10, 20, 30, 40] => [40, 30, 20, 10]
-        
+
         Stack<Integer> stack = new Stack<>();
         while (!queue.isEmpty()) {
             stack.push(queue.remove());
@@ -29,15 +29,5 @@ public class ReverseAQueue {
             queue.add(stack.pop());
         }
         return queue;
-
-        // while (true) {
-        //     if (!queue.isEmpty()) {
-        //         var item = queue.remove();
-        //         stack.push(item);
-        //         continue;
-        //     }
-        //     if(stack.isEmpty()) return queue;
-        //     queue.add(stack.pop());
-        // }
     }
 }
