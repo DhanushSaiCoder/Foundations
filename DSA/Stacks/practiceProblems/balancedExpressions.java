@@ -1,4 +1,3 @@
-
 import java.util.Stack;
 
 public class balancedExpressions {
@@ -24,26 +23,17 @@ public class balancedExpressions {
     }
 
     static Boolean isOpening(char ch) {
-        char openings[] = {'{', '[', '(', '<'};
-        for (char c : openings) {
-            if (c == ch) {
-                System.out.print(ch);
-                return true;
-            }
-        }
-        return false;
+        return switch (ch) {
+            case '{', '[', '(', '<' -> true;
+            default -> false;
+        };
     }
 
     static Boolean isClosing(char ch) {
-        char closings[] = {'}', ']', ')', '>'};
-        for (char c : closings) {
-            if (c == ch) {
-                System.out.print(ch);
-
-                return true;
-            }
-        }
-        return false;
+        return switch(ch){
+            case '}', ']', ')', '>' -> true;
+            default -> false;
+        };
     }
 
     static Character findClosingPair(char ch) {
