@@ -22,13 +22,10 @@ public class FirstNonRepeated {
             map.put(ch, 1);
         }
 
-        if(map.containsValue(1)) {
-            for(Character key : map.keySet()) {
-                if (map.get(key) == 1) {
-                    return key;
-                }
-            }
-        }
+        if(map.containsValue(1))
+            for(Character key : map.keySet())
+                if (map.get(key) == 1) return key;
+
         return ' ';
     }
 }
