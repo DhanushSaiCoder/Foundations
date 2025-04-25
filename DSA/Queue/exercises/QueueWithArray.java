@@ -1,3 +1,4 @@
+import  java.util.Arrays;
 public class QueueWithArray {
 
     public static void main(String[] args) {
@@ -14,8 +15,8 @@ public class QueueWithArray {
 
         private static  int front = -1;
         private static int rear = -1;
-        private static  int[] queue;
-        private int limit = 5;
+        private static int limit = 5;
+        private static  int[] queue = new int[limit];
 
         public void enqueue(int item) {
             //if empty: 
@@ -64,14 +65,14 @@ public class QueueWithArray {
 
         public String print() {
             if(isEmpty()) return "[]";
-            int[] resultArr = {};
+            int[] resultArr = new int[limit];
             int length=0, resultF = front;
             for(int i = front; i <= rear; i++){
                 resultArr[length] = queue[resultF];
                 length++;
                 resultF++;
             }
-            return resultArr.toString();
+            return Arrays.toString(resultArr);
         }
     }
 }
