@@ -1,15 +1,20 @@
-
 public class QueueWithArray {
 
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        ArrayQueue queue = new ArrayQueue();
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+        queue.enqueue(40);
+        System.out.println("Queue: " + queue.print());
+
     }
 
-    public class ArrayQueue {
+    public static class ArrayQueue {
 
-        private int front = -1;
-        private int rear = -1;
-        private int[] queue;
+        private static  int front = -1;
+        private static int rear = -1;
+        private static  int[] queue;
         private int limit = 5;
 
         public void enqueue(int item) {
@@ -50,14 +55,23 @@ public class QueueWithArray {
             return front == -1;
         }
 
-        public String peek(){
-            if(front != -1) return String.valueOf(queue[front]);
+        public String peek() {
+            if (front != -1) {
+                return String.valueOf(queue[front]);
+            }
             return "Queue is empty.";
         }
 
-        public String print(ArrayQueue queue) {
-            if(isEmpty()) return "Queue is empty.";
-           
+        public String print() {
+            if(isEmpty()) return "[]";
+            int[] resultArr = {};
+            int length=0, resultF = front;
+            for(int i = front; i <= rear; i++){
+                resultArr[length] = queue[resultF];
+                length++;
+                resultF++;
+            }
+            return resultArr.toString();
         }
     }
 }
