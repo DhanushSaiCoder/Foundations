@@ -2,7 +2,8 @@ import java.util.*;
 public class FirstRepeatedCharacter{
     public static void main(String[] args) {
         String str = "Dhanush Sai Nayak";
-        System.out.println("First repeated character: " + check(str));
+        char result = check(str);
+        System.out.println("First repeated character: " + (result == ' ' ? "Null" : result));
     }
     public static Character check(String str){
         Set<Character> set = new HashSet<>();
