@@ -5,7 +5,7 @@ public class FirstNonRepeated {
 
     public static void main(String[] args) {
         String str = "I am Getting Bored";
-        System.out.println(check(str));
+        System.out.println("'" + check(str) + "'" + " is not repeated.");
     }
 
     public static Character check(String str) {
@@ -21,10 +21,14 @@ public class FirstNonRepeated {
             }
             map.put(ch, 1);
         }
-
-        if(map.containsValue(1))
-            for(Character key : map.keySet())
-                if (map.get(key) == 1) return key;
+        System.out.println(map);
+        if (map.containsValue(1)) {
+            for (Character key : map.keySet()) {
+                if (map.get(key) == 1) {
+                    return key;
+                }
+            }
+        }
 
         return ' ';
     }
