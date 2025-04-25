@@ -1,4 +1,5 @@
 import  java.util.Arrays;
+
 public class QueueWithArray {
 
     public static void main(String[] args) {
@@ -7,6 +8,7 @@ public class QueueWithArray {
         queue.enqueue(20);
         queue.enqueue(30);
         queue.enqueue(40);
+        queue.dequeue();
         System.out.println("Queue: " + queue.print());
 
     }
